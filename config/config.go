@@ -55,6 +55,30 @@ type Ldap struct {
 	Cronjob         string `json:"cronjob"`
 }
 
+// AiConfig ai config
+type AiConfig struct {
+	Type     string         `json:"type"`
+	DeepSeek DeepSeekConfig `json:"deepSeekConfig"`
+	Timeout  int            `json:"timeout"`
+	Stream   bool           `json:"stream"`
+}
+
+// DeepSeekConfig deep seek config
+type DeepSeekConfig struct {
+	Url       string `json:"url"`
+	AppID     string `json:"appID"`
+	AppKey    string `json:"appKey"`
+	Model     string `json:"model"`
+	MaxTokens int    `json:"maxTokens"`
+}
+
+type OpenAIConfig struct {
+	Url    string `json:"url"`
+	AppID  string `json:"appID"`
+	AppKey string `json:"appKey"`
+	Model  string `json:"model"`
+}
+
 var (
 	configFile = "config/config.yaml"
 )
